@@ -43,6 +43,8 @@
 
 #ifndef _TEC_TAREA_04_H_
 #define _TEC_TAREA_04_H_
+#define multi 100
+#define alfa 0.6
 
 /**
  * This method is called before the real processing starts.

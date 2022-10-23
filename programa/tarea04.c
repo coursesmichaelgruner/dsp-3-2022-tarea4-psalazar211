@@ -48,12 +48,15 @@
 /**
  * You may need some global values 
  */
-
+double alfa;
+double multi;
+double k;
 /**
  * This method is called before the real processing starts.
  * You may use it to initialize whatever you need to.
  */
 void init(const unsigned int Fs) {
+	k = Fs * multi /1000;
 }
 
 /**
@@ -73,7 +76,9 @@ int process(const unsigned int Fs,
   /*
    * PUT YOUR CODE IN HERE
    */
-
+ 
+  for(int i=1; i< nframes; i++)
+  	out[i] = (1.0-alfa)*in[i]+alfa*out[i-1];
   /* This line just copies the data from input to output. REMOVE IT! */
   memcpy(out, in, sizeof(float)*nframes);
 
@@ -81,7 +86,7 @@ int process(const unsigned int Fs,
   /*
   printf("In: %.5f, Out: %.5f\n",*in,*out);
   fflush(stdout);
-  */
+ */
   return 0; // everything is ok 
 }
 
