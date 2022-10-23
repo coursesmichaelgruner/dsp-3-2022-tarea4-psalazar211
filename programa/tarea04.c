@@ -77,7 +77,7 @@ int process(const unsigned int Fs,
    * PUT YOUR CODE IN HERE
    */
  
-  for(int i=1; i< nframes; i++)
+  for(int i=k; i< nframes; i++)
   	out[i] = (1.0-alfa)*in[i]+alfa*out[i-1];
   /* This line just copies the data from input to output. REMOVE IT! */
   memcpy(out, in, sizeof(float)*nframes);
